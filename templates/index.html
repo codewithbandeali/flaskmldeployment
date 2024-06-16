@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Strength Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Concrete Strength Prediction</h1>
+        <form method=['GET','POST']>
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.cement.label }} {{ form.cement(size=20) }}
+            </div>
+            <div>
+                {{ form.slag.label }} {{ form.slag(size=20) }}
+            </div>
+            <div>
+                {{ form.flyash.label }} {{ form.flyash(size=20) }}
+            </div>
+            <div>
+                {{ form.water.label }} {{ form.water(size=20) }}
+            </div>
+            <div>
+                {{ form.superplasticizer.label }} {{ form.superplasticizer(size=20) }}
+            </div>
+            <div>
+                {{ form.coarseaggregate.label }} {{ form.coarseaggregate(size=20) }}
+            </div>
+            <div>
+                {{ form.fineaggregate.label }} {{ form.fineaggregate(size=20) }}
+            </div>
+            <div>
+                {{ form.age.label }} {{ form.age(size=20) }}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+        {% if result %}
+        <div class="result">{{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
